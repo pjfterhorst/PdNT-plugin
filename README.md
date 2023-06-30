@@ -6,7 +6,7 @@ How to install
 ## Overview
 The PDNT Response Chrome Extension reads localStorage data from the page and presents the parsed data in an easy-to-read popup. This tool is useful for developers and users who want to inspect the Nitnetail config stored in the localStorage of the customer
 
-## Installation
+## Installation source from Github
 
 1. Download the repository and unzip the files on your local machine.
 
