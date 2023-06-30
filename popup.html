@@ -5,6 +5,8 @@
     body {
       font-family: Arial, sans-serif;
       color: #333;
+      width: 400px;  
+      height: 600px;
     }
     .section {
       margin-bottom: 20px;
@@ -12,10 +14,33 @@
     .section h2 {
       color: #777;
     }
+    .menu-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between; 
+    }
+    .menu-bar button {
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
-  <h1>Stored Data</h1>
+  <h2>Local storage __nt_profile__</h2>
+  <div class="menu-bar">
+    <div>
+      <input type="checkbox" id="showAll" checked>Show All</input>
+      <input type="checkbox" id="showAudiences">Audiences</input>
+      <input type="checkbox" id="showTraits">Traits</input>
+    </div>
+    <button id="refreshBtn">Refresh</button> 
+  </div>
   <div id="data"></div>
   <script src="popup.js"></script>
 </body>

@@ -15,3 +15,11 @@ try {
 chrome.runtime.sendMessage({ type: 'FROM_CONTENT_SCRIPT', data: storedData }, response => {
     console.log('Message sent', response);
 });
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.message === "refresh_page") {
+      location.reload();
+    }
+  }
+);
