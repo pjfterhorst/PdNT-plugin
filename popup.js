@@ -64,19 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const keyValueDiv = document.createElement('div');
     const pKey = document.createElement('p');
     pKey.textContent = `${key} :`;
+    keyValueDiv.appendChild(pKey);
 
-    // If the data is an object, create a new section for it
     if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
-      const sectionDiv = createSection(data[key]);
-      keyValueDiv.appendChild(pKey);
-      keyValueDiv.appendChild(sectionDiv);
+      // If the data is an object, create a new section for each key-value pair
+      Object.keys(data[key]).forEach(subKey => {
+        const sectionDiv = createKeyValuePair(data[key], subKey);
+        keyValueDiv.appendChild(sectionDiv);
+      });
     } else {
       pKey.textContent += ` ${data[key]}`;
-      keyValueDiv.appendChild(pKey);
     }
 
     return keyValueDiv;
-  }
+}
+
+  
+  
+  
+  
 
   function createSection(data, key) {
     const sectionDiv = document.createElement('div');
